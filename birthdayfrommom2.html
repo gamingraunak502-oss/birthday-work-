@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mere Pyare Bete Ke Liye ❤️</title>
+
+<style>
+*{box-sizing:border-box}
+:root{--pink:#ff91c8;--gold:#ffe1a1}
+body{
+ margin:0;min-height:100vh;color:white;
+ font-family:'Segoe UI',sans-serif;
+ background:linear-gradient(-45deg,#180c2b,#502044,#26123d,#120c29);
+ background-size:400% 400%;
+ animation:bg 12s ease infinite;
+ overflow-x:hidden;
+}
+@keyframes bg{
+ 0%,100%{background-position:0% 50%}
+ 50%{background-position:100% 50%}
+}
+body:before{
+ content:"";position:fixed;inset:0;pointer-events:none;
+ background:radial-gradient(circle at 50% 35%,#ff75b51b,transparent 65%);
+}
+.progress{
+ position:fixed;top:0;left:0;width:100%;height:4px;
+ background:#ffffff18;z-index:10;
+}
+#bar{height:100%;width:20%;background:linear-gradient(90deg,#ff75b8,#ffe1a1);transition:.5s}
+.counter{
+ position:fixed;top:15px;left:0;width:100%;
+ text-align:center;letter-spacing:3px;font-size:11px;
+ color:#ffd8ec;z-index:5;
+}
+.page{
+ display:none;width:min(92%,540px);min-height:100svh;
+ margin:auto;padding:65px 12px 35px;text-align:center;
+ flex-direction:column;justify-content:center;align-items:center;
+}
+.page.active{display:flex;animation:enter .8s ease both}
+@keyframes enter{
+ from{opacity:0;transform:translateY(25px) scale(.98)}
+ to{opacity:1;transform:translateY(0) scale(1)}
+}
+h1{
+ font-size:clamp(31px,8vw,47px);line-height:1.2;
+ color:#ffbadb;text-shadow:0 0 25px #ff62ae65;
+ margin:17px 0;
+}
+h2{color:#ffe0ee;font-size:clamp(20px,5vw,26px)}
+p{font-size:16px;line-height:1.85;color:#ffe8f3}
+.eyebrow{font-size:12px;letter-spacing:3px;color:#ffd2e6}
+.glass{
+ width:100%;padding:22px;border:1px solid #ffffff25;
+ border-radius:26px;background:#ffffff0d;
+ box-shadow:0 10px 50px #00000020;
+ backdrop-filter:blur(12px);
+}
+.emoji{
+ font-size:85px;
+ filter:drop-shadow(0 0 18px #ff87ca70);
+ animation:bounce 2s ease-in-out infinite;
+}
+@keyframes bounce{
+ 0%,100%{transform:translateY(0) rotate(-3deg)}
+ 50%{transform:translateY(-13px) rotate(3deg)}
+}
+.gift{
+ font-size:105px;cursor:pointer;
+ animation:gift 1.8s ease-in-out infinite;
+ filter:drop-shadow(0 0 25px #ff83be80);
+}
+@keyframes gift{
+ 0%,100%{transform:scale(1) rotate(-4deg)}
+ 50%{transform:scale(1.1) rotate(4deg)}
+}
+button{
+ padding:14px 22px;margin:7px;border:0;border-radius:35px;
+ background:linear-gradient(110deg,#ff8abd,#ffe09c);
+ color:#40132e;font-size:15px;font-weight:750;
+ cursor:pointer;box-shadow:0 5px 25px #ff70b83b;
+ transition:transform .25s,filter .25s;
+}
+button:hover{transform:translateY(-3px) scale(1.03);filter:brightness(1.08)}
+button:active{transform:scale(.96)}
+.secondary{background:#ffffff0e;color:white;border:1px solid #ffb9da}
+.small{font-size:12px;color:#d9bad6}
+.letter{text-align:left;line-height:1.95;font-size:15px}
+.candles{font-size:48px;cursor:pointer;user-select:none}
+.flame{display:inline-block;animation:flicker .6s infinite alternate}
+@keyframes flicker{
+ from{transform:scale(.9) rotate(-5deg);filter:brightness(.9)}
+ to{transform:scale(1.1) rotate(5deg);filter:brightness(1.4)}
+}
+.float{
+ position:fixed;bottom:-50px;pointer-events:none;z-index:0;
+ animation:floatUp linear forwards;
+}
+@keyframes floatUp{
+ 0%{transform:translateY(0) rotate(0deg);opacity:0}
+ 10%{opacity:.9}
+ 100%{transform:translateY(-115vh) rotate(50deg);opacity:0}
+}
+.page>*{position:relative;z-index:1}
+#reply{display:none}
+#next2{display:none}
+#finalMessage{display:none}
+@media(max-width:400px){
+ .glass{padding:17px}
+ p{font-size:15px}
+ button{font-size:14px;padding:13px 18px}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+}
+</style>
+</head>
+<body>
+
+<div class="progress"><div id="bar"></div></div>
+<div class="counter" id="counter">MAA KA PYAAR ♥ 1 / 5</div>
+
+<section class="page active" id="p1">
+ <div class="eyebrow">✨ EK CHHOTA SA SURPRISE ✨</div>
+ <h1>Mere Pyare Bete! ❤️</h1>
+ <p>Meri jaan, Mumma ne tumhare liye apne dil se kuch khaas banaya hai.</p>
+ <div class="gift" onclick="go(2)">🎁</div>
+ <div class="glass">
+  <p>Kya tum Mumma ka pyaar bhara gift kholna chahoge? 🥹💖</p>
+  <button onclick="go(2)">Gift Kholo 💝 →</button>
+ </div>
+ <p class="small">Duniya bhar ka pyaar, sirf tumhari Mumma ki taraf se ❤️</p>
+</section>
+
+<section class="page" id="p2">
+ <div class="emoji">🥰</div>
+ <h1>Ek Baat Bataun?</h1>
+ <div class="glass">
+  <p>Kya tum jaante ho ki tum Mumma ki duniya mein sabse khaas kyun ho?</p>
+  <button onclick="answer()">Haan Mumma ❤️</button>
+  <button class="secondary" onclick="answer()">Aap Batao 🥹</button>
+  <p id="reply">Kyunki tum meri jaan ho, meri sabse pyaari dua ho aur meri zindagi ki sabse khoobsurat khushi ho! ❤️🫂</p>
+  <button id="next2" onclick="go(3)">Birthday Surprise Dekho →</button>
+ </div>
+</section>
+
+<section class="page" id="p3">
+ <div class="eyebrow">AAJ KA DIN BAHUT KHAAS HAI ✨</div>
+ <h1>Happy Birthday, Meri Jaan! 🎉</h1>
+ <div class="emoji">🎂</div>
+ <div class="glass">
+  <h2>Ek Wish Maango, Beta! 🌟</h2>
+  <p>Aankhein band karo, apne dil ki sabse pyaari wish maango aur candles par tap karo.</p>
+  <div class="candles" id="candles" onclick="blow()">
+   <span class="flame">🕯️</span>
+   <span class="flame">🕯️</span>
+   <span class="flame">🕯️</span>
+  </div>
+  <p id="wish">Meri dua hai ki tumhari har khwahish poori ho. ❤️</p>
+ </div>
+ <button onclick="go(4)">Mumma Ke Dil Ki Baat 💌 →</button>
+</section>
+
+<section class="page" id="p4">
+ <div style="font-size:65px;animation:bounce 2s infinite">💌</div>
+ <h1>Mere Dil Ka Tukda ❤️</h1>
+ <div class="glass letter">
+  Mere sabse pyaare bete, ❤️<br><br>
+  Jis din tum meri zindagi mein aaye the, us din meri duniya aur bhi khoobsurat ho gayi thi. Tumhari muskurahat meri zindagi ki sabse pyaari khushi hai. 🥹<br><br>
+  Beta, shayad main har baar apne dil ki baat lafzon mein na keh paaun, lekin tum mere liye duniya ki har khushi se badhkar ho.<br><br>
+  Meri dua hai ki tum zindagi mein khoob aage badho, tumhare saare sapne poore hon aur tumhe har kadam par khushiyan milen. Bhagwan tumhe hamesha sehatmand, khush aur salamat rakhe. 🤲<br><br>
+  Zindagi mein kabhi mushkil waqt aaye, toh yaad rakhna, tumhari Mumma ka pyaar hamesha tumhare saath hai. Tum kabhi bhi apne aap ko akela mat samajhna. 🫂<br><br>
+  Tum kitne bhi bade ho jao, meri nazron mein hamesha mere nanhe se bachche rahoge. Tum meri jaan ho, meri khushi ho aur meri duniya ho. ❤️<br><br>
+  <strong>Hamesha tumhari, tumhari Mumma. 💖</strong>
+ </div>
+ <p>Bhagwan tumhe har buri nazar se bachaye. 🤲❤️</p>
+ <button onclick="go(5)">Aakhri Surprise 🥹 →</button>
+</section>
+
+<section class="page" id="p5">
+ <div style="font-size:65px">🎉🎁💖</div>
+ <h1>Mumma Loves You! ❤️</h1>
+ <div class="emoji">🫂</div>
+ <h2>Happy Birthday, Mere Bete!</h2>
+ <div class="glass">
+  <p>Tum sirf mere bete nahi, meri zindagi ka sabse anmol tohfa ho. ❤️</p>
+  <p>Meri har dua mein tum ho, meri har khushi ki wajah tum ho. Tumhari khushi se badhkar mere liye kuch bhi nahi. 🥹</p>
+  <h2>Mumma Ka Pyaar Hamesha Tumhare Saath! ♾️</h2>
+  <button onclick="celebrate()">Celebrate Karein! 🎊</button>
+  <button class="secondary" onclick="go(1)">Surprise Dobara Dekho ↻</button>
+  <p id="finalMessage">Ek tight wali jhappi Mumma ki taraf se! 🫂❤️🎉</p>
+ </div>
+ <p class="small">Dher saara pyaar — Tumhari Mumma ❤️</p>
+</section>
+
+<script>
+let current=1;
+let blown=false;
+
+function go(n){
+ document.getElementById('p'+current).classList.remove('active');
+ current=n;
+ document.getElementById('p'+current).classList.add('active');
+ document.getElementById('counter').textContent='MAA KA PYAAR ♥ '+current+' / 5';
+ document.getElementById('bar').style.width=(current*20)+'%';
+ window.scrollTo({top:0,behavior:'smooth'});
+ if(n===5) celebrate();
+}
+
+function answer(){
+ document.getElementById('reply').style.display='block';
+ document.getElementById('next2').style.display='inline-block';
+}
+
+function blow(){
+ if(blown)return;
+ blown=true;
+ document.getElementById('candles').innerHTML='💨 🎂 💨';
+ document.getElementById('wish').textContent=
+ 'Meri jaan, Bhagwan tumhari har wish poori kare aur tumhe hamesha khush rakhe. Mumma tumse bahut pyaar karti hai! ❤️🤲';
+ hearts(18);
+}
+
+function hearts(count){
+ const symbols=['❤️','💕','✨','🎉','💖','🌸','⭐'];
+ for(let i=0;i<count;i++){
+  const h=document.createElement('div');
+  h.className='float';
+  h.textContent=symbols[Math.floor(Math.random()*symbols.length)];
+  h.style.left=Math.random()*100+'vw';
+  h.style.fontSize=(18+Math.random()*23)+'px';
+  h.style.animationDuration=(3+Math.random()*4)+'s';
+  document.body.appendChild(h);
+  h.addEventListener('animationend',()=>h.remove(),{once:true});
+ }
+}
+
+function celebrate(){
+ hearts(45);
+ document.getElementById('finalMessage').style.display='block';
+}
+
+setInterval(()=>{
+ if(document.visibilityState==='visible' && Math.random()>.35) hearts(1);
+},1500);
+</script>
+</body>
+</html>
